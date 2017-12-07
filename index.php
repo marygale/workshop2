@@ -48,7 +48,7 @@ body {
 <body>
 
 <h3>Guessing Game</h3>
-<form action="guess.php" method="GET" class="webform">
+<form action="index.php" method="GET" class="webform">
 <?php if (isset($iNumber)) : ?>
 	<div class="response" <?php if($bCorrect) : ?> style="border: 3px solid green" <?php endif ;?> > 
 		<?php echo $msg; ?>
