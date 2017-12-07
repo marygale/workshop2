@@ -2,7 +2,7 @@
  
 $bCorrect = false;
 if (!isset($_GET["guess"])) {
-	$msg = "Guess a number from 1 to 100";
+	$msg = "Guess a number from 1 to 5";
 }else{
 	$iNumber = rand(1, 5);
 	if(isset($_GET['guess']) && isset($_GET['guess']) > $iNumber){
