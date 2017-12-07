@@ -5,9 +5,11 @@ if (!isset($_GET["guess"])) {
 	$msg = "Guess a number from 1 to 5";
 }else{
 	$iNumber = rand(1, 5);
-	if(isset($_GET['guess']) && isset($_GET['guess']) > $iNumber){
+	if(isset($_GET['guess']) && $_GET['guess'] > $iNumber){
 	 $msg = "The number you entered is greater than 5";
-	}elseif(isset($_GET['guess']) && isset($_GET['guess']) < $iNumber){
+	}elseif(!is_numeric($_GET['guess'])){
+		$msg = "Please enter a numeric value ";
+	}elseif(isset($_GET['guess']) && $_GET['guess'] < $iNumber){
 		$msg = "The number you entered is less than the guess number";
 	}elseif($_GET['guess'] == $iNumber){
 		$bCorrect = true;
