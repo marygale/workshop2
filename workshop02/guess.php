@@ -45,7 +45,7 @@ text-align:center;
 display: none;
 }
 .response{
-margin: 25px auto;
+margin: 10px auto;
 width: 25%;
 padding: 10px;
 word-wrap: break-word;
@@ -58,7 +58,11 @@ word-wrap: break-word;
 <h3>Guessing Game</h3>
 <p>Guess a number from 1 to 5</p>
 <form action="guess.php" method="GET" class="webform">
-   
+
+<div class="hide" style="display:none;">
+    <p>Number to guess <?php echo $_SESSION['num']; ?></p>
+    <p>Count <?php echo  $_SESSION['count']; ?></p>
+</div>	
 <div class="response" <?php if($bCorrect) : ?> style="border: 3px solid green" 
 <?php elseif($_SESSION['count'] < 3 && $bCorrect == false) : ?> style="border: 3px solid red"<?php endif ;?> >
 <?php echo $msg; ?>
@@ -69,6 +73,7 @@ word-wrap: break-word;
 <?php else :?>
 <p><a href="guess.php"> GUESS AGAIN ?</a></p>
 <?php endif ;?>
+
 </form>
 
 
