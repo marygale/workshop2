@@ -68,7 +68,7 @@ word-wrap: break-word;
 <?php elseif($_SESSION['count'] < 3 && $bCorrect == false) : ?> style="border: 3px solid red"<?php endif ;?> >
 
 <?php
-if ($_SESSION['count'] < 1) {
+if ($_SESSION['count'] < 1 && !$bCorrect) {
     echo "You've already used the allowable 3 guess ";
 } else {
     echo $msg;
