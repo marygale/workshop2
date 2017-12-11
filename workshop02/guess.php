@@ -1,20 +1,27 @@
 <?php
-
 $bCorrect = false;
+session_start();
+$msg = '';
 if (!isset($_GET["guess"])) {
-	$msg = "Guess a number from 1 to 5";
+	$_SESSION['num'] = $iNumber = rand(1, 5);
+    $_SESSION['count'] = 3;
 }else{
-	$iNumber = rand(1, 5);
-if($_GET['guess'] > $iNumber){
-	$msg = "The number you entered is greater than the guess number";
-}elseif($_GET['guess'] < $iNumber){
-	$msg = "The number you entered is less than the guess number";
-}elseif($_GET['guess'] == $iNumber){
-	$bCorrect = true;
-	$msg = "Your guess is correct : ". $iNumber;
-}else{
-	$msg = "The guess number is : ". $iNumber . "<br/> Your guess is : " . $_GET['guess'];
-	}
+    $iGuess = isset($_GET['guess']) ? $_GET['guess'] : '';
+    if(count($iGuess) == 0) {
+        $msg = "Missing guess parameter";
+    }elseif(!is_numeric($iGuess)){
+        $msg = "Your guess is not a number";
+    }elseif($iGuess < $_SESSION['num']){
+        $msg = "Your guess is too low";
+    }elseif($iGuess > $_SESSION['num']){
+        $msg = "Your guess is too high";
+    }elseif($iGuess == $_SESSION['num']){
+        $bCorrect = true;
+        $msg = "Congratulations - You are right";
+    }
+    if(!$bCorrect){
+        $_SESSION['count'] -= 1;
+    }
 }
 
 
@@ -48,9 +55,12 @@ word-wrap: break-word;
 <body>
 
 <h3>Guessing Game</h3>
+<p>Guess a number from 1 to 5</p>
 <form action="guess.php" method="GET" class="webform">
+    <p>Number to guess <?php echo $_SESSION['num']; ?></p>
+    <p>Count <?php echo  $_SESSION['count']; ?></p>
 <?php if (isset($iNumber)) : ?>
-<div class="response" <?php if($bCorrect) : ?> style="border: 3px solid green" <?php endif ;?> > 
+<div class="response" <?php if($bCorrect) : ?> style="border: 3px solid green" <?php endif ;?> >
 <?php echo $msg; ?>
 </div>
 <?php else : ?>
