@@ -11,7 +11,7 @@ if (!isset($_GET["guess"])) {
 	//$iGuess = isset($_GET['guess']) ? $_GET['guess'] : '';	
     if(empty($iGuess)) {
         $msg = "Missing guess parameter";
-    }elseif(!is_numeric($iGuess)){
+	}elseif(!is_numeric($iGuess)){
         $msg = "Your guess is not a number";
     }elseif($iGuess < $_SESSION['num']){
         $msg = "Your guess is too low";
@@ -20,6 +20,7 @@ if (!isset($_GET["guess"])) {
     }elseif($iGuess == $_SESSION['num']){
         $bCorrect = true;
         $msg = "Congratulations - You are right";
+		$_SESSION['count']  = 0;
     }
     if(!$bCorrect){
         $_SESSION['count'] -= 1;
@@ -65,7 +66,15 @@ word-wrap: break-word;
 </div>	
 <div class="response" <?php if($bCorrect) : ?> style="border: 3px solid green" 
 <?php elseif($_SESSION['count'] < 3 && $bCorrect == false) : ?> style="border: 3px solid red"<?php endif ;?> >
-<?php echo $msg; ?>
+
+<?php
+if ($_SESSION['count'] < 1) {
+    echo "You've already used the allowable 3 guess ";
+} else {
+    echo $msg;
+}
+?>
+
 </div>
 <?php if($_SESSION['count'] > 0) :?>
 <input type="text" name="guess" value="">
