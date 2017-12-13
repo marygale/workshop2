@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
             for($c=0;$c<3;$c++) {
                 for($h=0;$h<3;$h++) {
                     $r = check($choices[$c], $choices[$h]);
-                    $sResult = "Human = $choices[$h] Computer = $choices[$c] Result = $r</br>";
+                    $sResult .= "Human = $choices[$h] Computer = $choices[$c] Result = $r</br>";
                 }
             }
         }else{
