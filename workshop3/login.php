@@ -1,9 +1,5 @@
 <?php
 session_start();
-//var_dump($_SESSION);
-if (isset($_GET["action"])  && $_GET["action"]  == "logout") {
-  session_destroy();
-}
 if (isset($_SESSION['username'])) {
     header("Location: game.php?name=".urlencode($_SESSION['username']));
 } else if (isset($_POST["action"])  && $_POST["action"]  == "Login") {
@@ -50,7 +46,6 @@ if (isset($_SESSION['username'])) {
                         <input type="password" id="userPassword" class="form-control input-sm chat-input" name="password" placeholder="password"/></br>
                         <div class="wrapper">
                             <span class="group-btn">
-                               <!-- <button class="btn btn-primary btn-md" name="login">login <i class="fa fa-sign-in"></i></button>-->
                                 <input type="submit" class="btn btn-primary btn-md" value="Login" name="action" />
                             </span>
                         </div>

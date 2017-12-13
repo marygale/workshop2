@@ -1,8 +1,9 @@
 <?php
 session_start();
 $sResult = '';
+
 if (!isset($_SESSION['username'])) {
-    die("Name parameter missing");
+    die("Name parameter missing, <a href='login.php'> Login Again </a>");
 }else{
     /**User is still login process code here **/
     if (isset($_POST["action"])  && $_POST["action"]  == "Play") {
@@ -14,15 +15,20 @@ if (!isset($_SESSION['username'])) {
             for($c=0;$c<3;$c++) {
                 for($h=0;$h<3;$h++) {
                     $r = check($choices[$c], $choices[$h]);
-                    $sResult .= "Human = $choices[$h] Computer = $choices[$c] Result = $r</br>";
+                    $sResult = "Human = $choices[$h] Computer = $choices[$c] Result = $r</br>";
                 }
             }
         }else{
-            $sResult .= "Human = $human Computer = $computer Result=$result\n";
+            $sResult = "Human = $human Computer = $computer Result=$result\n";
         }
+    }elseif ( isset($_POST['logout']) && $_POST['logout'] == 'Logout' ) {
+        session_destroy();
+        header('Location: login.php');
+        return;
     }
-
 }
+
+
 function check($computer, $human){
     if($computer == $human) {
         return 'Tie!';
@@ -81,7 +87,9 @@ function check($computer, $human){
                         <option value="Test" <?php if(isset($human) && $human == 'Test') echo 'selected'; ?> >Test</option>
                     </select>
                     <input type="submit" class="btn btn-primary btn-xs" value="Play" name="action" />
-                    <a href="login.php?action=logout" class="btn btn-primary btn-xs">Logout</a>
+                    <!--<a href="login.php?action=logout" class="btn btn-primary btn-xs">Logout</a>-->
+                    <input type="submit" class="btn btn-primary btn-xs" value="Logout" name="logout" />
+                   <!-- <input type="submit" name="logout" value="Logout">-->
                 </div>
                 <div class="well">
                     <?php if (isset($sResult)) {
