@@ -10,15 +10,16 @@ if (!isset($_SESSION['username'])) {
         $choices = ['Rock', 'Paper', 'Scissors'];
         $computer = $choices[array_rand($choices)];
         $result = check($computer, $human);
-        /*var_dump($computer);
-        $sResult = check($computer, $human);*/
-        /*for($c=0;$c<3;$c++) {
-            for($h=0;$h<3;$h++) {
-                $r = check($c, $h);
-                $sResult .= "Human=$choices[$h] Computer=$choices[$c] Result=$r\n";
+        if($human == 'Test'){
+            for($c=0;$c<3;$c++) {
+                for($h=0;$h<3;$h++) {
+                    $r = check($choices[$c], $choices[$h]);
+                    $sResult .= "Human = $choices[$h] Computer = $choices[$c] Result = $r</br>";
+                }
             }
-        }*/
-        $sResult .= "Human = $human Computer=$computer Result=$result\n";
+        }else{
+            $sResult .= "Human = $human Computer = $computer Result=$result\n";
+        }
     }
 
 }
@@ -71,12 +72,13 @@ function check($computer, $human){
     <div class="row">
         <form action="" method="POST" class="webform">
             <div class="col-sm-12">
-                <p class="welcome">Welcome : <?php echo $_SESSION['username'];?></p>
+                <p class="welcome">Welcome : <?php echo htmlentities($_SESSION['username']);?></p>
                 <div class="dropdown">
                     <select name="choice">
                         <option value="Rock" <?php if(isset($human) && $human == 'Rock') echo 'selected'; ?>  >Rock</option>
                         <option value="Paper" <?php if(isset($human) && $human == 'Paper') echo 'selected'; ?> >Paper</option>
                         <option value="Scissors" <?php if(isset($human) && $human == 'Scissors') echo 'selected'; ?> >Scissors</option>
+                        <option value="Test" <?php if(isset($human) && $human == 'Test') echo 'selected'; ?> >Test</option>
                     </select>
                     <input type="submit" class="btn btn-primary btn-xs" value="Play" name="action" />
                     <a href="login.php?action=logout" class="btn btn-primary btn-xs">Logout</a>
