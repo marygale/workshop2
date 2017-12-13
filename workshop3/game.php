@@ -66,22 +66,20 @@ function check($computer, $human){
 </head>
 <body>
 
-<h3>Rock Paper Scissors</h3>
+<h3>Rock Paper Scissors </h3>
 <div id="games" class="container">
     <div class="row">
         <form action="" method="POST" class="webform">
             <div class="col-sm-12">
+                <p class="welcome">Welcome : <?php echo $_SESSION['username'];?></p>
                 <div class="dropdown">
                     <select name="choice">
-                        <option value="Rock">Rock</option>
-                        <option value="Paper">Paper</option>
-                        <option value="Scissors">Scissors</option>
+                        <option value="Rock" <?php if(isset($human) && $human == 'Rock') echo 'selected'; ?>  >Rock</option>
+                        <option value="Paper" <?php if(isset($human) && $human == 'Paper') echo 'selected'; ?> >Paper</option>
+                        <option value="Scissors" <?php if(isset($human) && $human == 'Scissors') echo 'selected'; ?> >Scissors</option>
                     </select>
                     <input type="submit" class="btn btn-primary btn-xs" value="Play" name="action" />
                     <a href="login.php?action=logout" class="btn btn-primary btn-xs">Logout</a>
-                 <!-- <button type="button" class="btn btn-primary btn-xs" name="action">Play</button>
-                    <button type="button" class="btn btn-primary btn-xs">Logout</button>-->
-
                 </div>
                 <div class="well">
                     <?php if (isset($sResult)) {
