@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+body {
+    background-color:#fff;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto,arial,sans-serif;
+    margin:50px 0;
+    padding:0;
+    text-align:center;
+
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container.box{
+    width: 650px;
+
+}
+.box p{
+    text-align: left;
+}
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+    max-width: 330px;
+    padding: 15px;
+    margin: 30px auto;
+}
+
+h4 {
+    border:0 solid #fff;
+    border-bottom-width:1px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+
+.wrapper {
+    text-align: center;
+}
+.response{
+    margin: 25px auto;
+    width: 25%;
+    border: 1px solid darkred;
+    padding: 10px;
+    word-wrap: break-word;
+    color: darkred;
+}
+.well{
+    background-color: #f1f1f1;
+    width: 550px;
+    margin: 30px auto;
+    padding: 20px;
+    border:1px solid #ccc;
+    text-align: left;
+    clear: both;
+    font-size: 13px;
+}
+#games{
+    width: 550px;
+}
+.dropdown{
+    float: left;
+    clear: both;
+}
+.btn-xs{
+    padding: 3px !important;
+    font-size: 13px;
+    border-radius: 0;
+}
+.dropdown select{
+    padding: 4px;
+}
+.welcome{
+    float: left;
+}

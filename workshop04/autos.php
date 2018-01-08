@@ -1,0 +1,111 @@
+<?php
+session_start();
+include_once('config.php');
+
+$results = getAutoList();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+}elseif (isset($_POST["action"])  && $_POST["action"]  == "Add") {
+    $make = isset($_POST['make']) ? htmlentities($_POST['make']) : '';
+    $year = isset($_POST['year']) ? htmlentities($_POST['year']) : '';
+    $mileage = isset($_POST['mileage']) ? htmlentities($_POST['mileage']) : '';
+    try{
+        $con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $sql = "INSERT into autos (make,year,mileage) VALUES (:Smake, :Iyear, :Imileage)";
+        $stmt = $con->prepare( $sql );
+        $stmt->bindParam(':Smake', $make, PDO::PARAM_STR);
+        $stmt->bindParam(':Iyear', $year, PDO::PARAM_INT);
+        $stmt->bindParam(':Imileage', $mileage, PDO::PARAM_INT);
+        $stmt->execute();
+        $results = getAutoList();
+    }catch (PDOException $e) {
+        print_r($stmt->errorInfo());
+        print_r('<script>alert("Error '.$stmt->errorCode().' has occurred. Please contact support@gale.com and try again later.")</script>');
+    }
+}elseif ( isset($_POST['logout']) && $_POST['logout'] == 'Logout' ) {
+    session_destroy();
+    header('Location: login.php');
+    return;
+}
+
+function getAutoList(){
+    $con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+    $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    $sql = "Select * FROM autos";
+    $query = $con->prepare( $sql );
+    $query->execute();
+    return $query->fetchAll();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jabagat, Mary Gale</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container box">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Tracking Autos for <?php echo $_SESSION['username'];?></h3>
+            <form action="" method="POST" class="webform">
+                <div class="well">
+                    <div class="form-group row">
+                        <label for="make" class="col-sm-2 col-form-label col-form-label-sm">Make</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-control-sm" id="make" name="make" placeholder="Make">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="year" class="col-sm-2 col-form-label col-form-label-sm">Year</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-control-sm" id="year" name="year" placeholder="Year">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="mileage" class="col-sm-2 col-form-label col-form-label-sm">Mileage</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-control-sm" id="mileage" name="mileage" placeholder="Mileage">
+                        </div>
+                    </div>
+
+                    <input type="submit" name="action" value="Add">
+                    <input type="submit" name="logout" value="Logout">
+                </div>
+            </form>
+            <?php if(count($results) > 0): ?>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Make </th>
+                        <th>Year</th>
+                        <th>Mileage</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        foreach ($results as $row){
+                            echo "<tr>";
+                            echo "<td>". $row['auto_id'] ."</td>";
+                            echo "<td>". $row['make'] ."</td>";
+                            echo "<td>". $row['year'] ."</td>";
+                            echo "<td>". $row['mileage'] ."</td>";
+                            echo "</tr>";
+                        }
+                    ?>
+                    </tbody>
+                </table>
+            <?php endif;?>
+
+        </div>
+    </div>
+</div>
+</body>
+
