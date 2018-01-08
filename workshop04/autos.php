@@ -6,14 +6,14 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php");
 }elseif(empty($_GET['name'])) {
     die("Name parameter missing");
-}elseif (isset($_POST["action"])  && $_POST["action"]  == "Add") {
+}elseif (isset($_POST["action"])  && $_POST["action"]  == "Add"){
     $make = clean($_POST['make']);
     $year = clean($_POST['year']);
     $mileage = clean($_POST['mileage']);
-    if(!is_numeric($make) || !is_numeric($year)){
-        $error = "Mileage and year must be numeric";
-    }elseif(strlen($make) < 1){
+    if(strlen($make) < 1){
         $error = "Make is required";
+    }elseif((!is_numeric($mileage)) || (!is_numeric($year))){
+        $error = "Mileage and year must be numeric";
     }else{
         try{
             $con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
@@ -77,7 +77,7 @@ function clean($data){
                     <?php echo $error; ?>
                 </div>
             <?php endif ?>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="webform">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?name=".urlencode($_SESSION['username']);?>" method="POST" class="webform">
                 <div class="well">
                     <div class="form-group row">
                         <label for="make" class="col-sm-2 col-form-label col-form-label-sm">Make</label>

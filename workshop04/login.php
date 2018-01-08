@@ -1,13 +1,6 @@
 <?php
     include_once('config.php');
-/*$con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-$con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-$stmt = $con->query("Select * FROM users");
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-    print_r($row);
-}*/
 session_start();
-/*session_destroy();*/
 if (isset($_SESSION['username'])) {
     header("Location: autos.php?name=".urlencode($_SESSION['username']));
 } else if (isset($_POST["action"])  && $_POST["action"]  == "Login") {
@@ -21,7 +14,7 @@ if (isset($_SESSION['username'])) {
         $keyin_password = hash('md5',$salt . $password);
         //check if valid email address
         if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
-            $error = 'Incorrect Email Format';
+            $error = 'Email must have an at-sign (@)';
         }elseif($stored_hash != $keyin_password){
             $error = 'Incorrect password';
         }else{
