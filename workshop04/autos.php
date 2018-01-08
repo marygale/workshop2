@@ -1,31 +1,38 @@
 <?php
 session_start();
 include_once('config.php');
-
 $results = getAutoList();
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
+}elseif(empty($_GET['name'])) {
+    die("Name parameter missing");
 }elseif (isset($_POST["action"])  && $_POST["action"]  == "Add") {
-    $make = isset($_POST['make']) ? htmlentities($_POST['make']) : '';
-    $year = isset($_POST['year']) ? htmlentities($_POST['year']) : '';
-    $mileage = isset($_POST['mileage']) ? htmlentities($_POST['mileage']) : '';
-    try{
-        $con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-        $sql = "INSERT into autos (make,year,mileage) VALUES (:Smake, :Iyear, :Imileage)";
-        $stmt = $con->prepare( $sql );
-        $stmt->bindParam(':Smake', $make, PDO::PARAM_STR);
-        $stmt->bindParam(':Iyear', $year, PDO::PARAM_INT);
-        $stmt->bindParam(':Imileage', $mileage, PDO::PARAM_INT);
-        $stmt->execute();
-        $results = getAutoList();
-    }catch (PDOException $e) {
-        print_r($stmt->errorInfo());
-        print_r('<script>alert("Error '.$stmt->errorCode().' has occurred. Please contact support@gale.com and try again later.")</script>');
+    $make = clean($_POST['make']);
+    $year = clean($_POST['year']);
+    $mileage = clean($_POST['mileage']);
+    if(!is_numeric($make) || !is_numeric($year)){
+        $error = "Mileage and year must be numeric";
+    }elseif(strlen($make) < 1){
+        $error = "Make is required";
+    }else{
+        try{
+            $con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+            $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            $sql = "INSERT into autos (make,year,mileage) VALUES (:Smake, :Iyear, :Imileage)";
+            $stmt = $con->prepare( $sql );
+            $stmt->bindParam(':Smake', $make, PDO::PARAM_STR);
+            $stmt->bindParam(':Iyear', $year, PDO::PARAM_INT);
+            $stmt->bindParam(':Imileage', $mileage, PDO::PARAM_INT);
+            $bSave = $stmt->execute() > 0 ? TRUE : FALSE;
+            $results = getAutoList();
+        }catch (PDOException $e) {
+            print_r($stmt->errorInfo());
+            print_r('<script>alert("Error '.$stmt->errorCode().' has occurred. Please contact support@gale.com and try again later.")</script>');
+        }
     }
 }elseif ( isset($_POST['logout']) && $_POST['logout'] == 'Logout' ) {
     session_destroy();
-    header('Location: login.php');
+    header('Location: index.php');
     return;
 }
 
@@ -35,7 +42,13 @@ function getAutoList(){
     $sql = "Select * FROM autos";
     $query = $con->prepare( $sql );
     $query->execute();
-    return $query->fetchAll();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+function clean($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlentities($data);
+    return $data;
 }
 ?>
 
@@ -54,7 +67,17 @@ function getAutoList(){
     <div class="row">
         <div class="col-sm-12">
             <h3>Tracking Autos for <?php echo $_SESSION['username'];?></h3>
-            <form action="" method="POST" class="webform">
+            <?php if(isset($bSave) && $bSave == TRUE) : ?>
+                <div class="response-sucess">
+                     Record inserted
+                </div>
+            <?php endif;?>
+            <?php if (isset($error)) : ?>
+                <div class="response-error">
+                    <?php echo $error; ?>
+                </div>
+            <?php endif ?>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="webform">
                 <div class="well">
                     <div class="form-group row">
                         <label for="make" class="col-sm-2 col-form-label col-form-label-sm">Make</label>

@@ -49,11 +49,8 @@ if (isset($_SESSION['username'])) {
     <div class="row">
         <div class="col-sm-12">
             <?php if (isset($error)) : ?>
-                <div class="response">
+                <div class="response-error">
                     <?php echo $error; ?>
-
-
-
                 </div>
             <?php endif ?>
             <form action="" method="POST" class="webform">

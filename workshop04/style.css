@@ -49,13 +49,19 @@ h4 {
 .wrapper {
     text-align: center;
 }
-.response{
+.response-error{
     margin: 25px auto;
-    width: 25%;
-    border: 1px solid darkred;
+    width: 100%;
     padding: 10px;
     word-wrap: break-word;
     color: darkred;
+}
+.response-sucess{
+    margin: 25px auto;
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+    color: green;
 }
 .well{
     background-color: #f1f1f1;
