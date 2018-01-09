@@ -58,7 +58,7 @@ function getAutoList(){
 }
 function clean($data){
     $data = trim($data);
-    //$data = stripslashes($data);
+    $data = stripslashes($data);
     $data = htmlentities($data);
     return $data;
 }
