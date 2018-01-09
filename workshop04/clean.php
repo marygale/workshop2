@@ -1,7 +1,6 @@
 <?php
 
 include_once('config.php');
-echo "DELETE FROM AUTOS TABLE";
 
 try {
     //$con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
