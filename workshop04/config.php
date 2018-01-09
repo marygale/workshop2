@@ -8,7 +8,6 @@ define( "DB_HOST", "localhost" );
 define( "DB_USERNAME", "gale" );
 define( "DB_PASSWORD", "_Ripe1234" );
 define( "DB_TABLE", "misc" );*/
-echo 'config check';die;
 define( "DB_DSN", "mysql:host=ec2-23-21-246-25.compute-1.amazonaws.com;port=5432;dbname=d6pfqph9c5dtm3" );
 /*define( "DB_DSN", "mysql:host=localhost;dbname=misc" );*/
 define( "DB_HOST", "ec2-23-21-246-25.compute-1.amazonaws.com" );
