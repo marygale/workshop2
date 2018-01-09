@@ -3,7 +3,7 @@
 session_start();
 if (isset($_SESSION['username'])) {
     header("Location: autos.php?name=".urlencode($_SESSION['username']));
-} else if (isset($_POST["action"])  && $_POST["action"]  == "Login") {
+}else if (isset($_POST["action"])  && $_POST["action"]  == "Login") {
     $bLogin = false;
     if(empty($_POST['username']) || empty($_POST['password'])) {
         $error = 'User name and password are required';
@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
             $error = 'Incorrect password';
         }else{
             $_SESSION['username'] = $_POST['username'];
-            $bLogin = true;
+            $bLogin = true; echo 'login';
 
         }
     }
@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
 
-<h3>Login</h3>
+<h3>Login <?php echo $bLogin; ?></h3>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
