@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
             $error = 'Incorrect password';
         }else{
             $_SESSION['username'] = $_POST['username'];
-            $bLogin = true; echo 'login';
+            $bLogin = true;
 
         }
     }
@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
 
-<h3>Login <?php echo $bLogin; ?></h3>
+<h3>Login</h3>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -48,8 +48,8 @@ if (isset($_SESSION['username'])) {
                     Login was successfull redirecting to autos page in just a moment ...
                 </div>
              <?php
-               /* sleep(20);
-                header("Location: autos.php?name=".urlencode($_SESSION['username']));*/
+               /* sleep(20);*/
+                header("Location: autos.php?name=".urlencode($_SESSION['username']));
              endif;?>
             <?php if (isset($error)) : ?>
                 <div class="response-error">
