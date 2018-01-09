@@ -10,8 +10,10 @@ if (!isset($_SESSION['username'])) {
     $make = clean($_POST['make']);
     $year = clean($_POST['year']);
     $mileage = clean($_POST['mileage']);
-    if(strlen($make) < 1){
+    if(strlen($make) < 1) {
         $error = "Make is required";
+    }elseif(empty($mileage) || empty($year)){
+        $error = "Mileage and year must not be empty";
     }elseif((!is_numeric($mileage)) || (!is_numeric($year))){
         $error = "Mileage and year must be numeric";
     }else{

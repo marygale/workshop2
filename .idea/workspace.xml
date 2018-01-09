@@ -47,11 +47,11 @@
       <file leaf-file-name="autos.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding>
-                <marker date="1515470925136" expanded="true" signature="757:829" ph="INSERT into autos... " />
-                <marker date="1515470925136" expanded="true" signature="2091:2110" ph="Select * FRO... autos" />
+                <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
+                <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
               </folding>
             </state>
           </provider>
@@ -276,12 +276,12 @@
       <workItem from="1513558507750" duration="1204000" />
       <workItem from="1515373912511" duration="19475000" />
       <workItem from="1515463136071" duration="4382000" />
-      <workItem from="1515470025108" duration="891000" />
+      <workItem from="1515470025108" duration="1179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44176000" />
+    <option name="totallyTimeSpent" value="44464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -380,8 +380,8 @@
         <state relative-caret-position="816">
           <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
-            <marker date="1515470925136" expanded="true" signature="757:829" ph="INSERT into autos... " />
-            <marker date="1515470925136" expanded="true" signature="2091:2110" ph="Select * FRO... autos" />
+            <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
+            <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
           </folding>
         </state>
       </provider>
@@ -415,8 +415,8 @@
         <state relative-caret-position="187">
           <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding>
-            <marker date="1515470925136" expanded="true" signature="757:829" ph="INSERT into autos... " />
-            <marker date="1515470925136" expanded="true" signature="2091:2110" ph="Select * FRO... autos" />
+            <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
+            <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
           </folding>
         </state>
       </provider>
@@ -623,11 +623,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
-            <marker date="1515470925136" expanded="true" signature="757:829" ph="INSERT into autos... " />
-            <marker date="1515470925136" expanded="true" signature="2091:2110" ph="Select * FRO... autos" />
+            <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
+            <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
           </folding>
         </state>
       </provider>
