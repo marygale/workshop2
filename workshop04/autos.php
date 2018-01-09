@@ -38,14 +38,15 @@ if (!isset($_SESSION['username'])) {
 
 function getAutoList(){
 
-   /* $dbopts = parse_url(getenv('DATABASE_URL'));
+    $dbopts = parse_url(getenv('DATABASE_URL'));
     $app->register(new Herrera\Pdo\PdoServiceProvider(),
         array(
             'pdo.dsn' => 'pgsql:dbname='.ltrim($dbopts["path"],'/').';host='.$dbopts["host"] . ';port=' . $dbopts["port"],
             'pdo.username' => $dbopts["user"],
             'pdo.password' => $dbopts["pass"]
         )
-    );*/
+    );
+    var_dump($dbopts);die;
     $con = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );var_dump($con);die;
     $con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $sql = "Select * FROM autos";
