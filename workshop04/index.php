@@ -9,14 +9,6 @@
 </head>
 <body>
 
-<!--<div class="container">
-    <h3>Welcome to Autos Database</h3>
-    <p><a href="login.php">Please Log In</a></p>
-    <p class="">
-        Attempt to go to
-        <a href="autos.php">autos.php</a> without logging in - it should fail with an error message.
-    <p>
-</div>-->
 
 <div class="container box">
     <div class="row">

@@ -4,6 +4,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     header("Location: autos.php?name=".urlencode($_SESSION['username']));
 } else if (isset($_POST["action"])  && $_POST["action"]  == "Login") {
+    $bLogin = false;
     if(empty($_POST['username']) || empty($_POST['password'])) {
         $error = 'User name and password are required';
     }elseif(!empty($_POST['username']) && !empty($_POST['password'])) {
@@ -19,9 +20,8 @@ if (isset($_SESSION['username'])) {
             $error = 'Incorrect password';
         }else{
             $_SESSION['username'] = $_POST['username'];
-            print_r('<script>$(".response-sucess").css("display", "block");</script>');
-            sleep(10);
-            header("Location: autos.php?name=".urlencode($_SESSION['username']));
+            $bLogin = true;
+
         }
     }
 }
@@ -43,9 +43,14 @@ if (isset($_SESSION['username'])) {
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="response-sucess" style="display:none;">
-                Login was successfull redirecting to autos page
-            </div>
+            <?php if(isset($bLogin) && $bLogin == true) : ?>
+                <div class="response-sucess">
+                    Login was successfull redirecting to autos page in just a moment ...
+                </div>
+             <?php
+                sleep(20);
+                header("Location: autos.php?name=".urlencode($_SESSION['username']));
+             endif;?>
             <?php if (isset($error)) : ?>
                 <div class="response-error">
                     <?php echo $error; ?>
