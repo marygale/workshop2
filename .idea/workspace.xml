@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99c7c-69b0-4eed-baad-14402bda24dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop04/autos.php" afterPath="$PROJECT_DIR$/workshop04/autos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop04/clean.php" afterPath="$PROJECT_DIR$/workshop04/clean.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +14,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="autos.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="autos.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
@@ -80,14 +80,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clean.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clean.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop04/clean.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="153">
+              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding>
-                <marker date="1515495461842" expanded="true" signature="41:55" ph="DELETE FROM " />
-                <marker date="1515495461842" expanded="true" signature="41:64" ph="DELETE FROM " />
+                <marker date="1515495850285" expanded="true" signature="41:55" ph="DELETE FROM " />
+                <marker date="1515495850285" expanded="true" signature="41:64" ph="DELETE FROM " />
+                <marker date="1515495850285" expanded="true" signature="536:553" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -114,8 +115,8 @@
         <option value="$PROJECT_DIR$/workshop04/config.php" />
         <option value="$PROJECT_DIR$/workshop04/index.php" />
         <option value="$PROJECT_DIR$/workshop04/login.php" />
-        <option value="$PROJECT_DIR$/workshop04/clean.php" />
         <option value="$PROJECT_DIR$/workshop04/autos.php" />
+        <option value="$PROJECT_DIR$/workshop04/clean.php" />
       </list>
     </option>
   </component>
@@ -288,12 +289,12 @@
       <workItem from="1515373912511" duration="19475000" />
       <workItem from="1515463136071" duration="4382000" />
       <workItem from="1515470025108" duration="2834000" />
-      <workItem from="1515493226393" duration="2432000" />
+      <workItem from="1515493226393" duration="2616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48551000" />
+    <option name="totallyTimeSpent" value="48735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -715,17 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workshop04/clean.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <marker date="1515495461842" expanded="true" signature="41:55" ph="DELETE FROM " />
-            <marker date="1515495461842" expanded="true" signature="41:64" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -733,6 +723,18 @@
           <folding>
             <marker date="1515495546079" expanded="true" signature="887:959" ph="INSERT into autos... " />
             <marker date="1515495546079" expanded="true" signature="2221:2240" ph="Select * FRO... autos" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workshop04/clean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <marker date="1515495850285" expanded="true" signature="41:55" ph="DELETE FROM " />
+            <marker date="1515495850285" expanded="true" signature="41:64" ph="DELETE FROM " />
+            <marker date="1515495850285" expanded="true" signature="536:553" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
