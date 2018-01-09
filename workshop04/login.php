@@ -48,8 +48,8 @@ if (isset($_SESSION['username'])) {
                     Login was successfull redirecting to autos page in just a moment ...
                 </div>
              <?php
-                sleep(20);
-                header("Location: autos.php?name=".urlencode($_SESSION['username']));
+               /* sleep(20);
+                header("Location: autos.php?name=".urlencode($_SESSION['username']));*/
              endif;?>
             <?php if (isset($error)) : ?>
                 <div class="response-error">
