@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99c7c-69b0-4eed-baad-14402bda24dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop04/login.php" afterPath="$PROJECT_DIR$/workshop04/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop04/autos.php" afterPath="$PROJECT_DIR$/workshop04/autos.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,14 +15,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="autos.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="autos.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="85" column="26" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="85" selection-end-column="26" />
+            <state relative-caret-position="85">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding>
-                <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
-                <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
+                <marker date="1515472257700" expanded="true" signature="887:959" ph="INSERT into autos... " />
+                <marker date="1515472257700" expanded="true" signature="2221:2240" ph="Select * FRO... autos" />
               </folding>
             </state>
           </provider>
@@ -57,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workshop04/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="391">
               <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding />
             </state>
@@ -87,8 +88,8 @@
         <option value="$PROJECT_DIR$/workshop04/style.css" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/workshop04/config.php" />
-        <option value="$PROJECT_DIR$/workshop04/autos.php" />
         <option value="$PROJECT_DIR$/workshop04/login.php" />
+        <option value="$PROJECT_DIR$/workshop04/autos.php" />
       </list>
     </option>
   </component>
@@ -260,12 +261,12 @@
       <workItem from="1513558507750" duration="1204000" />
       <workItem from="1515373912511" duration="19475000" />
       <workItem from="1515463136071" duration="4382000" />
-      <workItem from="1515470025108" duration="1903000" />
+      <workItem from="1515470025108" duration="2217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45188000" />
+    <option name="totallyTimeSpent" value="45502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -364,8 +365,8 @@
         <state relative-caret-position="816">
           <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
-            <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
-            <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
+            <marker date="1515472257700" expanded="true" signature="887:959" ph="INSERT into autos... " />
+            <marker date="1515472257700" expanded="true" signature="2221:2240" ph="Select * FRO... autos" />
           </folding>
         </state>
       </provider>
@@ -399,8 +400,8 @@
         <state relative-caret-position="187">
           <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding>
-            <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
-            <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
+            <marker date="1515472257700" expanded="true" signature="887:959" ph="INSERT into autos... " />
+            <marker date="1515472257700" expanded="true" signature="2221:2240" ph="Select * FRO... autos" />
           </folding>
         </state>
       </provider>
@@ -597,22 +598,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
+    <entry file="file://$PROJECT_DIR$/workshop04/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="85" column="26" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="85" selection-end-column="26" />
-          <folding>
-            <marker date="1515471217418" expanded="true" signature="859:931" ph="INSERT into autos... " />
-            <marker date="1515471217418" expanded="true" signature="2193:2212" ph="Select * FRO... autos" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workshop04/login.php">
+    <entry file="file://$PROJECT_DIR$/workshop04/autos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="85">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <marker date="1515472257700" expanded="true" signature="887:959" ph="INSERT into autos... " />
+            <marker date="1515472257700" expanded="true" signature="2221:2240" ph="Select * FRO... autos" />
+          </folding>
         </state>
       </provider>
     </entry>

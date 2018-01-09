@@ -2,10 +2,10 @@
 session_start();
 include_once('config.php');
 $results = getAutoList();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-}elseif(empty($_GET['name'])) {
+if (!isset($_SESSION['username']) || empty($_GET['name'])) {
     die("Name parameter missing");
+/*}elseif(empty($_GET['name'])) {
+    die("Name parameter missing");*/
 }elseif (isset($_POST["action"])  && $_POST["action"]  == "Add"){
     $make = clean($_POST['make']);
     $year = clean($_POST['year']);
