@@ -1,10 +1,10 @@
 <?php
 
 session_start();
+$bLogin = false;
 if (isset($_SESSION['username'])) {
     header("Location: autos.php?name=".urlencode($_SESSION['username']));
 }else if (isset($_POST["action"])  && $_POST["action"]  == "Login") {
-    $bLogin = false;
     if(empty($_POST['username']) || empty($_POST['password'])) {
         $error = 'User name and password are required';
     }elseif(!empty($_POST['username']) && !empty($_POST['password'])) {
@@ -56,6 +56,7 @@ if (isset($_SESSION['username'])) {
                     <?php echo $error; ?>
                 </div>
             <?php endif ?>
+            <?php if($bLogin == false) : ?>
             <form action="" method="POST" class="webform">
                 <div class="form-login">
                     <h4>Welcome back!</h4>
@@ -63,11 +64,12 @@ if (isset($_SESSION['username'])) {
                     <input type="password" id="userPassword" class="form-control input-sm chat-input" name="password" placeholder="password"/></br>
                     <div class="wrapper">
                             <span class="group-btn">
-                                <input type="submit" class="btn btn-primary btn-md" value="Login" name="action" />
+                                <input type="submit" class="btn btn-primary btn-md" value="Login" name="action"/>
                             </span>
                     </div>
                 </div>
             </form>
+            <?php endif; ?>
         </div>
     </div>
 </div>

@@ -156,7 +156,6 @@ p {
 }
 
 .load-wrapp p {padding: 0 0 20px; color:green;}
-.load-wrapp:last-child {margin-right: 0;}
 
 
 .bar {
@@ -181,4 +180,7 @@ p {
         background-color: #f5634a;
         width: 25px;
     }
+}
+.table{
+    background-color:#ffffff;
 }
