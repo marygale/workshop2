@@ -21,7 +21,7 @@ if (isset($_SESSION['username'])) {
         }else{
             $_SESSION['username'] = $_POST['username'];
             $bLogin = true;
-
+            header( "refresh:5;url=autos.php?name=".urlencode($_SESSION['username']));
         }
     }
 }
@@ -44,13 +44,13 @@ if (isset($_SESSION['username'])) {
     <div class="row">
         <div class="col-sm-12">
             <?php if(isset($bLogin) && $bLogin == true) : ?>
-                <div class="response-sucess">
-                    Login was successfull redirecting to autos page in just a moment ...
+                <div class="load-wrapp">
+                    <div class="load-10">
+                        <p>Login was successfull redirecting to autos page in just a moment ...</p>
+                        <div class="bar"></div>
+                    </div>
                 </div>
-             <?php
-               /* sleep(20);*/
-                header("Location: autos.php?name=".urlencode($_SESSION['username']));
-             endif;?>
+             <?php endif;?>
             <?php if (isset($error)) : ?>
                 <div class="response-error">
                     <?php echo $error; ?>
