@@ -109,7 +109,6 @@ function clean($data){
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>#</th>
                         <th>Make </th>
                         <th>Year</th>
                         <th>Mileage</th>
@@ -119,7 +118,6 @@ function clean($data){
                     <?php
                         foreach ($results as $row){
                             echo "<tr>";
-                            echo "<td>". $row['auto_id'] ."</td>";
                             echo "<td>". ucwords($row['make']) ."</td>";
                             echo "<td>". $row['year'] ."</td>";
                             echo "<td>". $row['mileage'] ."</td>";
