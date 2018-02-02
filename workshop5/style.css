@@ -1,0 +1,186 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+body {
+    background-color:#fff;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto,arial,sans-serif;
+    margin:50px 0;
+    padding:0;
+    text-align:center;
+
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container.box{
+    width: 650px;
+
+}
+.box p{
+    text-align: left;
+}
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+    max-width: 330px;
+    padding: 15px;
+    margin: 30px auto;
+}
+
+h4 {
+    border:0 solid #fff;
+    border-bottom-width:1px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+
+.wrapper {
+    text-align: center;
+}
+.response-error{
+    margin: 25px auto;
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+    color: darkred;
+}
+.response-sucess{
+    margin: 25px auto;
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+    color: green;
+}
+.well{
+    background-color: #f1f1f1;
+    width: 550px;
+    margin: 30px auto;
+    padding: 20px;
+    border:1px solid #ccc;
+    text-align: left;
+    clear: both;
+    font-size: 13px;
+}
+#games{
+    width: 550px;
+}
+.dropdown{
+    float: left;
+    clear: both;
+}
+.btn-xs{
+    padding: 3px !important;
+    font-size: 13px;
+    border-radius: 0;
+}
+.dropdown select{
+    padding: 4px;
+}
+.welcome{
+    float: left;
+}
+
+
+
+/* -----------------------------------------
+  =Default css to make the demo more pretty
+-------------------------------------------- */
+
+body {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    overflow-y: scroll;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    color: #777;
+    background-color: #f7f7f7;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+.content {
+    padding: 15px;
+    overflow: hidden;
+    background-color: #e7e7e7;
+    background-color: rgba(0,0,0,0.06);
+}
+
+h1 {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d8d8d8;
+    font-weight: 600;
+}
+
+h1 span {font-family: monospace,serif;}
+
+h3 {
+    padding-bottom: 20px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.1) ,0 2px 0 rgba(255,255,255,.9);
+}
+
+p {
+    margin: 0;
+    padding: 10px 0;
+    color: #777;
+}
+
+.clear {clear:both;}
+
+/* -----------------------------------------
+  =CSS3 Loading animations
+-------------------------------------------- */
+
+/* =Elements style
+---------------------- */
+.load-wrapp {
+    width: 330px;
+    height: 50px;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.load-wrapp p {padding: 0 0 20px; color:green;}
+
+
+.bar {
+    float: left;
+    width: 300px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: #4b9cdb;
+    margin: 0 auto;
+}
+
+/* =Animate the stuff
+------------------------ */
+
+.load-10 .bar {animation: loadingJ 2s cubic-bezier(.17,.37,.43,.67) infinite;}
+
+@keyframes loadingJ {
+    0%,100% {transform: translate(0,0);}
+
+    50% {
+        transform: translate(80px,0);
+        background-color: #f5634a;
+        width: 25px;
+    }
+}
+.table{
+    background-color:#ffffff;
+}
