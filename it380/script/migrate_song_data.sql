@@ -1,4 +1,4 @@
-LOAD DATA LOCAL INFILE 'csv/unique_jam.csv'
+LOAD DATA LOCAL INFILE '../csv/unique_jam.csv'
 INTO TABLE songs
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

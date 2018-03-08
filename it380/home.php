@@ -47,6 +47,12 @@
         <div style="margin-top:25px;"></div>
         <div id="recommended">
             <h5>Recommended</h5>
+            <div class="loader hide">
+                <p>Loading...</p>
+                <div class="loader-inner"></div>
+                <div class="loader-inner"></div>
+                <div class="loader-inner"></div>
+            </div>
             <ul class="list-group">
             </ul>
         </div>
@@ -62,42 +68,46 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script>
-    $('#artist').keyup(function(){
-        value = $(this).val();
-        $.ajax({
-            type:'GET',
-            url : 'ajax/search.php',
-            data: {'artist':value},
-            dataType: "JSON",
-            success:function(data){
-                $('#artist').addClass('result');
-                $('#result').addClass('result_result');
-                $('#result ul').html("");
-                $('#result').show();
+    $(document).ready(function() {
+        $('#artist').keyup(function(){
+            value = $(this).val();
+            $.ajax({
+                type:'GET',
+                url : 'ajax/search.php',
+                data: {'artist':value},
+                dataType: "JSON",
+                success:function(data){
+                    $('#artist').addClass('result');
+                    $('#result').addClass('result_result');
+                    $('#result ul').html("");
+                    $('#result').show();
 
-                $.each(data, function(k, v) {
-                    var song = v.artist + ' - '+ v.title;
-                    $('#result ul').append('<li class="artist_live" data-song_id="'+v.song_id+'">'+song+'</li>');
-                });
-            }
-        })
+                    $.each(data, function(k, v) {
+                        var song = v.artist + ' - '+ v.title;
+                        $('#result ul').append('<li class="artist_live" data-song_id="'+v.song_id+'">'+song+'</li>');
+                    });
+                }
+            })
+        });
+
+        $('#result').on('click', '.artist_live', function(){
+            var artist = $(this).text();
+            var song_id = $(this).data('song_id');
+            $('#artist').val(artist);
+            $('#song_id').val(song_id);
+            $('#result').hide();
+            $('#artist').removeClass('result');
+            $('#result').removeClass('result_result');
+        });
+
+        $('#add_artist').click(function(){
+            $('.loader').removeClass('hide');
+            var artist = $('#artist').val();
+            var song_id = $('#song_id').val();
+            add_recommended(song_id,artist);
+        });
     });
 
-    $('#result').on('click', '.artist_live', function(){
-        var artist = $(this).text();
-        var song_id = $(this).data('song_id');
-        $('#artist').val(artist);
-        $('#song_id').val(song_id);
-        $('#result').hide();
-        $('#artist').removeClass('result');
-        $('#result').removeClass('result_result');
-    });
-
-    $('#add_artist').click(function(){
-        var artist = $('#artist').val();
-        var song_id = $('#song_id').val();
-        add_recommended(song_id,artist);
-    });
 
     function recommended_artist(song_id)
     {
@@ -106,7 +116,8 @@
             url : 'ajax/recommendation.php',
             data : { 'song_id':song_id },
             dataType : 'JSON',
-            success : function(data){ console.log(data);
+            success : function(data){
+                $('.loader').addClass('hide');
                 $('#recommended ul').html('');
                 $.each(data, function(k, v) {
                     $('#recommended ul').append("<li class='list-group-item'><button type='button' class='btn btn-info btn-circle' onclick=\"add_recommended(\'"+v.rhs+"\',\'"+v.song_name+"\')\"><i class='fas fa-plus'></i></button>"+v.song_name+"</li>");
